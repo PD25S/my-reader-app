@@ -1,11 +1,11 @@
-import { Greetings } from './components/Greetings'
-import { GlobalStyle } from './styles/GlobalStyle'
+import Header from './components/Header'
+import SelectButton from './components/SelectButton'
 
 export function App() {
   return (
     <>
-      <GlobalStyle />
-      <Greetings />
+      <Header />
+      <SelectButton />
     </>
   )
 }
