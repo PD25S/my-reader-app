@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HeaderEffect = styled.div`
+export const Container = styled.header`
     height: 100px;
     color: white;
     align-items: center;
