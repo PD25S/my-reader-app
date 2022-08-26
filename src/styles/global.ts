@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     color: ${sg.colors.grey200};
-    background: ${sg.themeColors.highlight};
     font-size: ${sg.fontSize.default};
     line-height: normal;
     -webkit-font-smoothing: antialiased;
