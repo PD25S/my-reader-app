@@ -1,11 +1,11 @@
-import { Greetings } from './components/Greetings'
+import * as PAGES from './pages'
 import { GlobalStyle } from './styles/GlobalStyle'
 
 export function App() {
   return (
     <>
       <GlobalStyle />
-      <Greetings />
+      <PAGES.Home />
     </>
   )
 }
