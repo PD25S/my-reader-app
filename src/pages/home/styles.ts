@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
+import { sg } from '@/styles'
+
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   margin: 32px;
 `
 
-export const Title = styled.h1`
-  font-size: 48px;
-  color: #3a3a3a;
+export const Content = styled.div`
+  display: flex;
+  margin-top: ${sg.spacing.xxxlarge};
 `
