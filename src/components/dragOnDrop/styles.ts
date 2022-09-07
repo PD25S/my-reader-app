@@ -2,21 +2,21 @@ import styled from 'styled-components'
 
 import { sg } from '@/styles'
 
-export const Container = styled.article`
+export const Container = styled.section`
   cursor: pointer;
-`
 
-export const Dropzone = styled.div`
-  display: flex;
-  flex-direction: column;
+  .dropzone {
+    display: flex;
+    flex-direction: column;
 
-  align-items: center;
-  justify-content: center;
+    align-items: center;
+    justify-content: center;
 
-  border: 1px solid ${sg.colors.grey100 + sg.opacity[80]};
-  border-radius: ${sg.spacing.xlarge};
+    border: 1px solid ${sg.colors.grey100 + sg.opacity[80]};
+    border-radius: ${sg.spacing.xlarge};
 
-  padding: ${sg.spacing.xxxlarge};
+    padding: ${sg.spacing.xxxlarge};
+  }
 `
 
 export const Content = styled.div`

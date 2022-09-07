@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback } from 'react'
 
-import { Accept, useDropzone } from 'react-dropzone'
+import { useDropzone } from 'react-dropzone'
 
 import * as S from './styles'
 
@@ -15,33 +15,28 @@ export const DragOnDrop: React.FC<DragOnDropProps> = ({
   description = 'Arraste e solte aqui ou clique para escolher seu arquivo no formato .doc',
   setFile
 }) => {
-  const accept = useMemo<Accept>(() => ({ doc: ['.doc', '.docx'] }), [])
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone({
-    accept
+  const onDrop = useCallback(
+    acceptedFiles => {
+      const [file] = acceptedFiles
+      setFile(file)
+    },
+    [setFile]
+  )
+
+  const { getRootProps, getInputProps } = useDropzone({
+    useFsAccessApi: false,
+    onDrop
   })
-
-  const [fileName, setFileName] = useState('')
-
-  const setDragOnDropFile = useCallback(() => {
-    const [file] = acceptedFiles
-    file && setFile(file)
-    setFileName(file?.name || '')
-  }, [acceptedFiles, setFile])
-
-  useEffect(() => {
-    setDragOnDropFile()
-  }, [setDragOnDropFile])
 
   return (
     <S.Container>
-      <S.Dropzone {...getRootProps()}>
+      <section {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
         <S.Content>
           <h4>{title}</h4>
           <p>{description}</p>
-          <p>{fileName}</p>
         </S.Content>
-      </S.Dropzone>
+      </section>
     </S.Container>
   )
 }
